@@ -1,22 +1,14 @@
-import tailwindcss from "@tailwindcss/vite";
-import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { fileURLToPath } from "node:url";
+import react from "@vitejs/plugin-react";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
   plugins: [
-    tanstackStart({
-      server: {
-        preset: 'vercel'
-      }
-    }),
+    TanStackRouterVite(),
     react(),
     tailwindcss(),
+    tsconfigPaths(),
   ],
 });
