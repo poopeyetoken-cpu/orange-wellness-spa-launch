@@ -73,7 +73,6 @@ export function Footer() {
               </p>
               <ul className="space-y-3 text-cream opacity-80">
                 <li>1st Floor, Sky Tower</li>
-                <li>Ashokapura, Jawahar Nagar</li>
                 <li>Mavoor Road Junction</li>
                 <li>Kozhikode, Kerala - 673001</li>
                 <li>+91 8137833588</li>

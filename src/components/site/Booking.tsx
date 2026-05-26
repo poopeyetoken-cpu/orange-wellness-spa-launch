@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Phone, MessageCircle, Calendar } from "lucide-react";
+import { Phone, MessageCircle, Calendar, ChevronDown } from "lucide-react";
 
 /* ────────────────────────────────────────────────────────── */
 /*  Booking — UNCONTROLLED text inputs (ref-based)           */
@@ -190,58 +190,77 @@ export function Booking() {
 
                 {/* Service + Date */}
                 <div className="grid gap-5 md:grid-cols-2">
+                  {/* ── Service ── */}
                   <div>
                     <label htmlFor="booking-service" className="block text-fluid-xs tracking-[0.16em] uppercase text-muted-foreground mb-2">
                       Service
                     </label>
-                    <select
-                      ref={serviceRef}
-                      id="booking-service"
-                      defaultValue={SERVICES[0]}
-                      className="w-full bg-transparent border-0 border-b border-border min-h-[2.75rem] py-2 text-[length:var(--text-base)] text-ink outline-none text-ellipsis overflow-hidden whitespace-nowrap"
-                      style={{ appearance: "none" }}
-                    >
-                      {SERVICES.map((s) => (
-                        <option key={s} value={s}>
-                          {s}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        ref={serviceRef}
+                        id="booking-service"
+                        defaultValue={SERVICES[0]}
+                        className="w-full bg-transparent border-0 border-b border-border min-h-[2.75rem] py-2 pr-6 text-[length:var(--text-base)] text-ink outline-none focus:border-forest-deep transition-colors cursor-pointer"
+                        style={{ appearance: "none", WebkitAppearance: "none", MozAppearance: "none" }}
+                      >
+                        {SERVICES.map((s) => (
+                          <option key={s} value={s}>{s}</option>
+                        ))}
+                      </select>
+                      <ChevronDown
+                        aria-hidden="true"
+                        strokeWidth={1.5}
+                        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/40"
+                      />
+                    </div>
                   </div>
 
+                  {/* ── Preferred Date ── */}
                   <div>
                     <label htmlFor="booking-date" className="block text-fluid-xs tracking-[0.16em] uppercase text-muted-foreground mb-2">
                       Preferred date
                     </label>
-                    <input
-                      ref={dateRef}
-                      id="booking-date"
-                      required
-                      type="date"
-                      className={`w-full bg-transparent border-0 border-b min-h-[2.75rem] py-2 text-[length:var(--text-base)] text-ink outline-none ${errors.date ? 'border-red-500' : 'border-border focus:border-forest-deep'}`}
-                    />
+                    <div className="relative">
+                      <input
+                        ref={dateRef}
+                        id="booking-date"
+                        required
+                        type="date"
+                        className={`w-full bg-transparent border-0 border-b min-h-[2.75rem] py-2 pr-6 text-[length:var(--text-base)] text-ink outline-none transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer ${errors.date ? 'border-red-500' : 'border-border focus:border-forest-deep'}`}
+                      />
+                      <ChevronDown
+                        aria-hidden="true"
+                        strokeWidth={1.5}
+                        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/40"
+                      />
+                    </div>
                     {errors.date && <p className="text-red-500 text-xs mt-1">{errors.date}</p>}
                   </div>
                 </div>
 
-                {/* Time */}
+                {/* ── Preferred Time ── */}
                 <div>
                   <label htmlFor="booking-time" className="block text-fluid-xs tracking-[0.16em] uppercase text-muted-foreground mb-2">
                     Preferred time
                   </label>
-                  <select
-                    ref={timeRef}
-                    id="booking-time"
-                    defaultValue={TIMES[0]}
-                    className="w-full bg-transparent border-0 border-b border-border min-h-[2.75rem] py-2 text-[length:var(--text-base)] text-ink outline-none"
-                    style={{ appearance: "none" }}
-                  >
-                    {TIMES.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <select
+                      ref={timeRef}
+                      id="booking-time"
+                      defaultValue={TIMES[0]}
+                      className="w-full bg-transparent border-0 border-b border-border min-h-[2.75rem] py-2 pr-6 text-[length:var(--text-base)] text-ink outline-none focus:border-forest-deep transition-colors cursor-pointer"
+                      style={{ appearance: "none", WebkitAppearance: "none", MozAppearance: "none" }}
+                    >
+                      {TIMES.map((t) => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                    </select>
+                    <ChevronDown
+                      aria-hidden="true"
+                      strokeWidth={1.5}
+                      className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/40"
+                    />
+                  </div>
                 </div>
 
                 {/* Therapist */}

@@ -35,17 +35,25 @@ const FEATURED = [
 
 const ALL = [
   "Olive oil massage",
-  "Cream massage",
-  "Butterfly massage",
   "Scrub massage",
-  "Aroma massage",
-  "Sweedish massage",
   "Deep tissue massage",
-  "Shirodhara",
-  "Spa with Ayurvedic Treatments",
   "Full Body Massage & Body Scrub",
+  "Cream massage",
+  "Aroma massage",
+  "Shirodhara",
   "Yoga Classes",
+  "Butterfly massage",
+  "Sweedish massage",
+  "Spa with Ayurvedic Treatments",
 ];
+
+function slugify(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 export function Services() {
   return (
@@ -66,7 +74,7 @@ export function Services() {
         </div>
 
         <div className="space-y-3">
-          {FEATURED.map((s, i) => (
+          {FEATURED.map((s) => (
             <article
               key={s.n}
               className="group grid gap-6 md:grid-cols-12 md:gap-8 items-center border-t border-border py-8 reveal"
@@ -91,7 +99,7 @@ export function Services() {
 
               <div className="md:col-span-5 order-2 md:order-3">
                 <p className="text-fluid-xs tracking-[0.16em] uppercase text-gold mb-3">
-                  {s.tag} � {s.duration}
+                  {s.tag} · {s.duration}
                 </p>
                 <h3 className="font-display text-fluid-xl leading-snug mb-3">
                   {s.title}
@@ -102,11 +110,11 @@ export function Services() {
               </div>
 
               <div className="md:col-span-2 order-4 md:order-4 md:text-right">
-                  <a
-                    href="#book"
-                    aria-label={`Book ${s.title}`}
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-border text-forest-deep hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-500 group-hover:rotate-45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-card"
-                  >
+                <a
+                  href="#book"
+                  aria-label={`Book ${s.title}`}
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-border text-forest-deep hover:bg-forest-deep hover:text-cream hover:border-forest-deep transition-all duration-500 group-hover:rotate-45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                >
                   <ArrowUpRight className="w-5 h-5" />
                 </a>
               </div>
@@ -114,6 +122,7 @@ export function Services() {
           ))}
         </div>
 
+        {/* ── Complete menu of care ── */}
         <div className="mt-12 pt-10 border-t border-border reveal">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
             <h3 className="font-display text-fluid-xl max-w-md">
@@ -121,16 +130,18 @@ export function Services() {
             </h3>
             <a href="#book" className="btn-link">View full price list</a>
           </div>
-          <ul className="fluid-grid gap-4">
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {ALL.map((t) => (
-              <li
-                key={t}
-                className="flex items-baseline justify-between gap-4 border-b border-dashed border-border/70 pb-3 text-fluid-base"
-              >
-                <span className="text-foreground opacity-85">{t}</span>
-                <span className="text-fluid-xs tracking-[0.16em] uppercase text-muted-foreground">
-                  on request
-                </span>
+              <li key={t}>
+                <a
+                  href={`/booking?service=${slugify(t)}`}
+                  aria-label={`Book ${t}`}
+                  className="group flex items-center justify-between gap-3 w-full px-5 py-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm text-foreground opacity-90 hover:opacity-100 hover:border-gold/60 hover:bg-gold/5 hover:shadow-[0_0_0_1px_theme(colors.gold/0.2),0_4px_24px_theme(colors.gold/0.07)] active:scale-[0.98] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                >
+                  <span className="font-medium text-fluid-sm leading-snug">{t}</span>
+                  <ArrowUpRight className="w-4 h-4 shrink-0 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
               </li>
             ))}
           </ul>
@@ -139,4 +150,3 @@ export function Services() {
     </section>
   );
 }
-

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { X } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 
 export function LeadPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -165,30 +165,48 @@ export function LeadPopup() {
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
+            {/* ── Service ── */}
             <div>
               <label htmlFor="popup-service" className="block text-[10px] uppercase tracking-[0.16em] font-medium text-muted-foreground mb-1">Service</label>
-              <select
-                id="popup-service"
-                name="service"
-                required
-                className="w-full bg-transparent border-0 border-b border-border min-h-[2.5rem] py-2 text-ink outline-none focus:border-forest-deep transition-colors text-ellipsis overflow-hidden whitespace-nowrap text-fluid-sm"
-                style={{ appearance: "none" }}
-              >
-                <option value="Any Service">Any Service</option>
-                <option value="Full Body Massage">Full Body</option>
-                <option value="Deep Tissue Massage">Deep Tissue</option>
-                <option value="Shirodhara">Shirodhara</option>
-              </select>
+              <div className="relative">
+                <select
+                  id="popup-service"
+                  name="service"
+                  required
+                  className="w-full bg-transparent border-0 border-b border-border min-h-[2.5rem] py-2 pr-6 text-ink outline-none focus:border-forest-deep transition-colors text-fluid-sm cursor-pointer"
+                  style={{ appearance: "none", WebkitAppearance: "none", MozAppearance: "none" }}
+                >
+                  <option value="Any Service">Any Service</option>
+                  <option value="Full Body Massage">Full Body</option>
+                  <option value="Deep Tissue Massage">Deep Tissue</option>
+                  <option value="Shirodhara">Shirodhara</option>
+                  <option value="Olive Oil Massage">Olive Oil</option>
+                  <option value="Aroma Massage">Aroma</option>
+                  <option value="Yoga Classes">Yoga</option>
+                </select>
+                <ChevronDown
+                  aria-hidden="true"
+                  className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground opacity-60"
+                />
+              </div>
             </div>
+
+            {/* ── Date & Time ── */}
             <div>
               <label htmlFor="popup-datetime" className="block text-[10px] uppercase tracking-[0.16em] font-medium text-muted-foreground mb-1">Date & Time</label>
-              <input
-                id="popup-datetime"
-                name="datetime"
-                type="datetime-local"
-                required
-                className="w-full bg-transparent border-0 border-b border-border min-h-[2.5rem] py-2 text-ink outline-none focus:border-forest-deep transition-colors text-fluid-sm"
-              />
+              <div className="relative">
+                <input
+                  id="popup-datetime"
+                  name="datetime"
+                  type="datetime-local"
+                  required
+                  className="w-full bg-transparent border-0 border-b border-border min-h-[2.5rem] py-2 pr-6 text-ink outline-none focus:border-forest-deep transition-colors text-fluid-sm [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+                />
+                <ChevronDown
+                  aria-hidden="true"
+                  className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground opacity-60"
+                />
+              </div>
             </div>
           </div>
           
