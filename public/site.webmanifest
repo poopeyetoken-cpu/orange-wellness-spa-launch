@@ -1,7 +1,7 @@
 {
-  "name": "Orange Wellness Spa & Salon Calicut",
-  "short_name": "Orange Wellness",
-  "description": "Massage Spa in Calicut for Ayurvedic rituals, facials, body scrubs, Epilimo DNA testing and yoga.",
+  "name": "My Spa Ayurvedic Hub",
+  "short_name": "My Spa Ayurvedic Hub",
+  "description": "Massage Spa in Calicut for Ayurvedic rituals, facials, body scrubs, Shirodhara and yoga.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

@@ -1,26 +1,26 @@
 export const SEO = {
-  siteUrl: "https://orangewellnessspa.in/",
-  title: "Massage Spa in Calicut - Orange Wellness Spa | Kozhikode",
+  siteUrl: "https://myspaayurvedichub.in/",
+  title: "Massage Spa in Calicut - My Spa Ayurvedic Hub | Kozhikode",
   description:
-    "Massage Spa in Calicut for Ayurvedic rituals, facials, body scrubs, Epilimo DNA testing and yoga at Orange Wellness Spa in Eranjipalam, Kozhikode, Kerala.",
+    "Massage Spa in Calicut for Ayurvedic rituals, facials, body scrubs, Shirodhara and yoga at My Spa Ayurvedic Hub in Mavoor Road, Kozhikode, Kerala.",
   keywords:
-    "massage spa Calicut, spa Kozhikode, Ayurvedic massage Calicut, wellness spa Eranjipalam, facial treatment Kozhikode, body scrub Calicut, Epilimo DNA test, yoga classes Calicut",
-  author: "Orange Wellness Spa & Salon Calicut",
-  brandName: "Orange Wellness Spa & Salon Calicut",
+    "massage spa Calicut, spa Kozhikode, Ayurvedic massage Calicut, wellness spa Mavoor Road, facial treatment Kozhikode, body scrub Calicut, Shirodhara, yoga classes Calicut",
+  author: "My Spa Ayurvedic Hub",
+  brandName: "My Spa Ayurvedic Hub",
   themeColor: "#1c2e25",
-  ogImage: "https://orangewellnessspa.in/og-image.jpg",
+  ogImage: "https://myspaayurvedichub.in/og-image.jpg",
   ogImageAlt:
-    "Warm candlelit massage room at Orange Wellness Spa & Salon Calicut in Kozhikode",
-  instagram: "https://www.instagram.com/orange_wellness_spa_",
-  facebook: "https://www.facebook.com/spaorangewellness",
-  phonePrimary: "+91 9169169109",
-  phoneSecondary: "+91 7788994198",
-  email: "orange.wellness.spa.calicut@gmail.com",
+    "Warm candlelit massage room at My Spa Ayurvedic Hub in Kozhikode",
+  instagram: "https://www.instagram.com",
+  facebook: "https://www.facebook.com",
+  phonePrimary: "+91 8137833588",
+  phoneSecondary: "+91 8921043599",
+  email: "myspagr8@gmail.com",
   streetAddress:
-    "1st, Kulirani Arcade, Ashokapura, Jawahar Nagar, Sales Tax Office Road, Eranjipalam",
+    "1st Floor, Sky Tower Mavoor Road Junction Kozhikode (Calicut) 673001",
   city: "Kozhikode",
   region: "Kerala",
-  postalCode: "673006",
+  postalCode: "673001",
   country: "IN",
 };
 

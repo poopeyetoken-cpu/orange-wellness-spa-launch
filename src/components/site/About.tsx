@@ -9,13 +9,13 @@ const STATS = [
 
 export function About() {
   return (
-    <section id="about" className="section-pad bg-background content-auto">
+    <section id="about" className="section-pad bg-background">
       <div className="container-luxe grid gap-10 lg:grid-cols-12 lg:gap-16 items-center">
         <div className="lg:col-span-5 relative reveal order-2 lg:order-1">
           <div className="relative aspect-[4/5] overflow-hidden">
             <img
               src={aboutImg}
-              alt="The cream-toned lounge of Orange Wellness Spa with brass and walnut details"
+              alt="The cream-toned lounge of My Spa Ayurvedic Hub with brass and walnut details"
               loading="lazy"
               decoding="async"
               width={1080}
@@ -37,11 +37,11 @@ export function About() {
           <p className="eyebrow mb-5 reveal">Our philosophy</p>
           <h2 className="font-display text-fluid-2xl leading-[1.05] mb-6 reveal">
             Holistic care, written in the language of
-            <span className="italic text-forest"> ritual</span>.
+            <span className="italic text-forest dark:text-gold-soft"> ritual</span>.
           </h2>
-          <div className="space-y-5 text-foreground/75 max-w-xl text-fluid-base leading-relaxed reveal">
+          <div className="space-y-5 text-foreground opacity-75 max-w-xl text-fluid-base leading-relaxed reveal">
             <p>
-              Orange Wellness Spa is the work of therapists, naturopaths and
+              My Spa Ayurvedic Hub is the work of therapists, naturopaths and
               skincare specialists who believe true beauty begins with stillness.
               Each treatment is composed from time-honoured Ayurvedic wisdom,
               European spa craft and contemporary science.
@@ -57,7 +57,7 @@ export function About() {
             {STATS.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="font-display text-fluid-2xl text-forest-deep">
+                <dd className="font-display text-fluid-2xl text-forest-deep dark:text-gold-soft">
                   {s.value}
                 </dd>
                 <p className="mt-2 text-fluid-xs tracking-[0.16em] uppercase text-muted-foreground">

@@ -8,7 +8,7 @@ export function ThemeToggle() {
     const nextIsDark = !root.classList.contains("dark");
     root.classList.toggle("dark", nextIsDark);
     root.style.colorScheme = nextIsDark ? "dark" : "light";
-    localStorage.setItem(STORAGE_KEY, nextIsDark ? "dark" : "light");
+    try { localStorage.setItem(STORAGE_KEY, nextIsDark ? "dark" : "light"); } catch { /* iframe / restricted context */ }
   };
 
   return (

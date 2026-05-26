@@ -3,11 +3,12 @@ import { useEffect } from "react";
 export function useReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const els = document.querySelectorAll<HTMLElement>(".reveal");
+    
     if (!("IntersectionObserver" in window)) {
-      els.forEach((el) => el.classList.add("is-visible"));
+      document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => el.classList.add("is-visible"));
       return;
     }
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,8 +20,33 @@ export function useReveal() {
       },
       { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
     );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    // Initial observe
+    document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => io.observe(el));
+
+    // Observe newly added lazy-loaded elements
+    const mo = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === 1) { // ELEMENT_NODE
+            const el = node as HTMLElement;
+            if (el.classList?.contains("reveal")) {
+              io.observe(el);
+            }
+            // Also check children of added node
+            const nestedReveals = el.querySelectorAll?.(".reveal");
+            nestedReveals?.forEach((nested) => io.observe(nested));
+          }
+        });
+      });
+    });
+
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
   }, []);
 }
 

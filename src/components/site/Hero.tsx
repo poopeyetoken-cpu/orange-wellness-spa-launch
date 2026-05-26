@@ -10,7 +10,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="A serene candlelit treatment room at Orange Wellness Spa with white orchids and warm stone walls"
+          alt="A serene candlelit treatment room at My Spa Ayurvedic Hub with white orchids and warm stone walls"
           loading="eager"
           decoding="async"
           className="w-full h-full object-cover ken-burns"
@@ -30,9 +30,9 @@ export function Hero() {
           <h1 className="font-display text-hero leading-[1.02] mb-6 reveal is-visible">
             Massage Spa in
             <span className="italic text-gold-soft"> Calicut, Kozhikode </span>
-            at Orange Wellness Spa.
+            at My Spa Ayurvedic Hub.
           </h1>
-          <p className="max-w-xl text-fluid-lg leading-relaxed text-cream/85 mb-8 reveal is-visible">
+          <p className="max-w-xl text-fluid-lg leading-relaxed text-cream opacity-85 mb-8 reveal is-visible">
             Step inside a quiet world of warm stone, golden light and unhurried
             ritual. Bespoke massage, Ayurveda, skincare and holistic wellness -
             crafted by certified therapists for the way you live now.
@@ -50,7 +50,7 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-fluid-sm text-cream/80 reveal is-visible">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-fluid-sm text-cream opacity-80 reveal is-visible">
             <div className="flex items-center gap-2">
               <div className="flex" aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -67,7 +67,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 right-6 hidden md:flex flex-col items-center gap-2 text-fluid-xs tracking-[0.2em] uppercase text-cream/70">
+      <div className="absolute bottom-6 right-6 hidden md:flex flex-col items-center gap-2 text-fluid-xs tracking-[0.2em] uppercase text-cream opacity-70">
         <span>Scroll</span>
         <span className="w-px h-12 bg-cream/40 relative overflow-hidden">
           <span className="absolute inset-x-0 top-0 h-4 bg-gold animate-[scrollcue_2.4s_ease-in-out_infinite]" />

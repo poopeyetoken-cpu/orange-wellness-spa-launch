@@ -1,7 +1,7 @@
 export function WhatsAppFab() {
   return (
     <a
-      href="https://wa.me/919169169109?text=Hello%20Orange%20Wellness%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment."
+      href="https://wa.me/918921043599?text=Hello%20My%20Spa%20Ayurvedic%20Hub%2C%20I%27d%20like%20to%20book%20an%20appointment."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"

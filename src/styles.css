@@ -372,7 +372,7 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--forest-deep);
+    color: var(--primary);
     border-bottom: 1px solid currentColor;
     padding-bottom: 0.25rem;
     transition: color 0.3s ease, gap 0.3s ease;

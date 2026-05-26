@@ -34,33 +34,32 @@ const FEATURED = [
 ];
 
 const ALL = [
-  "Full Body Massage & Body Scrub",
+  "Olive oil massage",
+  "Cream massage",
+  "Butterfly massage",
+  "Scrub massage",
+  "Aroma massage",
+  "Sweedish massage",
+  "Deep tissue massage",
+  "Shirodhara",
   "Spa with Ayurvedic Treatments",
-  "Western Spa Therapies",
-  "Unisex Spa & Salon",
-  "Body Treatments",
-  "Skin Care Treatments",
-  "Hair Care Treatments",
-  "Nail Care Treatments",
-  "Facial Treatments",
-  "Wellness Consultation",
-  "Epilimo · DNA Genetic Testing",
+  "Full Body Massage & Body Scrub",
   "Yoga Classes",
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative section-pad bg-card content-auto">
+    <section id="services" className="relative section-pad bg-card">
       <div className="container-luxe">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
           <div className="max-w-2xl">
             <p className="eyebrow mb-5 reveal">Signature menu</p>
             <h2 className="font-display text-fluid-2xl leading-[1.05] reveal">
               Treatments composed
-              <span className="italic text-forest"> like a private symphony</span>.
+              <span className="italic text-forest dark:text-gold-soft"> like a private symphony</span>.
             </h2>
           </div>
-          <p className="md:max-w-sm text-fluid-base text-foreground/70 leading-relaxed reveal">
+          <p className="md:max-w-sm text-fluid-base text-foreground opacity-70 leading-relaxed reveal">
             A curated selection of our most-loved rituals. Each one is tailored
             after a brief consultation with your therapist.
           </p>
@@ -92,12 +91,12 @@ export function Services() {
 
               <div className="md:col-span-5 order-2 md:order-3">
                 <p className="text-fluid-xs tracking-[0.16em] uppercase text-gold mb-3">
-                  {s.tag} · {s.duration}
+                  {s.tag} ï¿½ {s.duration}
                 </p>
                 <h3 className="font-display text-fluid-xl leading-snug mb-3">
                   {s.title}
                 </h3>
-                <p className="text-fluid-base text-foreground/70 leading-relaxed max-w-md">
+                <p className="text-fluid-base text-foreground opacity-70 leading-relaxed max-w-md">
                   {s.blurb}
                 </p>
               </div>
@@ -128,7 +127,7 @@ export function Services() {
                 key={t}
                 className="flex items-baseline justify-between gap-4 border-b border-dashed border-border/70 pb-3 text-fluid-base"
               >
-                <span className="text-foreground/85">{t}</span>
+                <span className="text-foreground opacity-85">{t}</span>
                 <span className="text-fluid-xs tracking-[0.16em] uppercase text-muted-foreground">
                   on request
                 </span>

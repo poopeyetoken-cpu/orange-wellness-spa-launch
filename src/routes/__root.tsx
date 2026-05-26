@@ -4,12 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-
-import appCss from "../styles.css?url";
-import { CSP_CONTENT, SEO, seoJsonLd, themeInitScript } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -69,59 +64,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "UTF-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-      { name: "description", content: SEO.description },
-      { name: "keywords", content: SEO.keywords },
-      { name: "author", content: SEO.author },
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
-      { name: "theme-color", content: SEO.themeColor },
-      { name: "msapplication-TileColor", content: SEO.themeColor },
-      { httpEquiv: "Content-Security-Policy", content: CSP_CONTENT },
-    ],
-    links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
-      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
-      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-      { rel: "manifest", href: "/site.webmanifest" },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <title>{SEO.title}</title>
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{ __html: themeInitScript }}
-        />
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: seoJsonLd }}
-        />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -132,4 +78,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

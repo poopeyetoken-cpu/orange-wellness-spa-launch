@@ -3,13 +3,13 @@ import { Star } from "lucide-react";
 const REVIEWS = [
   {
     quote:
-      "I have travelled to spas in Bali and Kyoto, and Orange Wellness Spa holds its own. The Abhyanga ritual was transcendent, and the therapist remembered every detail of my consultation.",
+      "I have travelled to spas in Bali and Kyoto, and My Spa Ayurvedic Hub holds its own. The Abhyanga ritual was transcendent, and the therapist remembered every detail of my consultation.",
     name: "Aanya Mehra",
     role: "Returning guest - 3 years",
   },
   {
     quote:
-      "The Epilimo consultation completely changed how I think about my skin. My facial protocol is now built around my actual biology. Results in six weeks were undeniable.",
+      "The Shirodhara therapy was incredibly transformative. It helped me find profound inner peace and relieved my chronic migraines after just a few sessions.",
     name: "Dr. Karthik Rao",
     role: "Cardiologist",
   },
@@ -23,7 +23,7 @@ const REVIEWS = [
 
 export function Testimonials() {
   return (
-    <section className="section-pad bg-card content-auto">
+    <section className="section-pad bg-card">
       <div className="container-luxe">
         <div className="max-w-2xl mb-12">
           <p className="eyebrow mb-5 reveal">In their words</p>
@@ -43,7 +43,7 @@ export function Testimonials() {
                   <Star key={k} className="w-3.5 h-3.5 fill-gold text-gold" />
                 ))}
               </div>
-              <blockquote className="font-display text-fluid-xl leading-snug text-foreground/90 italic">
+              <blockquote className="font-display text-fluid-xl leading-snug text-foreground opacity-90 italic">
                 "{r.quote}"
               </blockquote>
               <figcaption className="mt-auto pt-6 border-t border-border">

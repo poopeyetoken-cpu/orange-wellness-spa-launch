@@ -11,16 +11,16 @@ const ITEMS = [
 
 export function WhyUs() {
   return (
-    <section className="section-pad bg-forest-deep text-cream grain content-auto">
+    <section className="section-pad bg-forest-deep text-cream grain">
       <div className="container-luxe">
         <div className="grid gap-10 lg:grid-cols-12 mb-12">
           <div className="lg:col-span-5">
-            <p className="eyebrow !text-gold-soft mb-5 reveal">Why Orange Wellness Spa</p>
+            <p className="eyebrow !text-gold-soft mb-5 reveal">Why My Spa Ayurvedic Hub</p>
             <h2 className="font-display text-fluid-2xl leading-[1.05] reveal">
               Six quiet promises behind every appointment.
             </h2>
           </div>
-          <p className="lg:col-span-6 lg:col-start-7 text-cream/75 text-fluid-lg leading-relaxed self-end reveal">
+          <p className="lg:col-span-6 lg:col-start-7 text-cream opacity-75 text-fluid-lg leading-relaxed self-end reveal">
             Luxury, for us, is not gold leaf or grand atriums. It is the
             certainty that every hand on you is skilled, every product is clean
             and every minute belongs to you alone.
@@ -35,7 +35,7 @@ export function WhyUs() {
             >
               <Icon className="w-6 h-6 text-gold mb-6" strokeWidth={1.4} />
               <h3 className="font-display text-fluid-xl mb-3">{title}</h3>
-              <p className="text-cream/70 leading-relaxed text-fluid-base">{text}</p>
+              <p className="text-cream opacity-70 leading-relaxed text-fluid-base">{text}</p>
             </li>
           ))}
         </ul>

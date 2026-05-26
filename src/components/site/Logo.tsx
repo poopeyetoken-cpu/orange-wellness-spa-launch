@@ -10,8 +10,8 @@ export function Logo({ className = "" }: { className?: string }) {
         <circle cx="16" cy="22" r="2.2" fill="currentColor" />
       </svg>
       <span className="whitespace-nowrap font-display text-fluid-lg tracking-wide leading-none">
-        Orange
-        <span className="opacity-70 italic"> Wellness Spa</span>
+        My Spa
+        <span className="opacity-70 italic"> Ayurvedic Hub</span>
       </span>
     </span>
   );
