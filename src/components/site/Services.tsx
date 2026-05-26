@@ -47,12 +47,17 @@ const ALL = [
   "Spa with Ayurvedic Treatments",
 ];
 
-function slugify(name: string) {
-  return name
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
+function bookService(name: string) {
+  // Pre-select the service in the booking form if the option exists
+  const sel = document.getElementById("booking-service") as HTMLSelectElement | null;
+  if (sel) {
+    const match = Array.from(sel.options).find(
+      (o) => o.value.toLowerCase() === name.toLowerCase()
+    );
+    if (match) sel.value = match.value;
+  }
+  // Smooth-scroll to the booking section
+  document.getElementById("book")?.scrollIntoView({ behavior: "smooth" });
 }
 
 export function Services() {
@@ -134,14 +139,15 @@ export function Services() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {ALL.map((t) => (
               <li key={t}>
-                <a
-                  href={`/booking?service=${slugify(t)}`}
+                <button
+                  type="button"
+                  onClick={() => bookService(t)}
                   aria-label={`Book ${t}`}
                   className="group flex items-center justify-between gap-3 w-full px-5 py-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm text-foreground opacity-90 hover:opacity-100 hover:border-gold/60 hover:bg-gold/5 hover:shadow-[0_0_0_1px_theme(colors.gold/0.2),0_4px_24px_theme(colors.gold/0.07)] active:scale-[0.98] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                 >
                   <span className="font-medium text-fluid-sm leading-snug">{t}</span>
                   <ArrowUpRight className="w-4 h-4 shrink-0 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </a>
+                </button>
               </li>
             ))}
           </ul>

@@ -9,15 +9,16 @@ import { Phone, MessageCircle, Calendar, ChevronDown } from "lucide-react";
 
 const SERVICES = [
   "Olive oil massage",
-  "Cream massage",
-  "Butterfly massage",
   "Scrub massage",
-  "Aroma massage",
-  "Sweedish massage",
   "Deep tissue massage",
+  "Full Body Massage & Body Scrub",
+  "Cream massage",
+  "Aroma massage",
   "Shirodhara",
   "Yoga Classes",
-  "Full Body Massage",
+  "Butterfly massage",
+  "Sweedish massage",
+  "Spa with Ayurvedic Treatments",
 ];
 
 const TIMES = [
